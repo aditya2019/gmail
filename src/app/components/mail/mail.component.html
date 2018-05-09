@@ -1,0 +1,28 @@
+<div class="container space" >
+<div class="row">
+ <div class="col-md-2">
+   <ul class="list-group">
+  <li class="list-group-item">index</li>
+  <li class="list-group-item">sharred</li>
+  <li class="list-group-item">send mail</li>
+  <li class="list-group-item">more</li>
+</ul>
+ </div>
+
+ <div class="col-md-10" >
+<table class="table table-striped" >
+
+  <tbody >
+    <tr *ngFor="let mail of allMails">
+
+      <th scope="row"><input type="checkbox"></th>
+      <td class="location">{{mail.name}}</td>
+      <td class="location">{{mail.sub}}</td>
+      <td>{{mail.time}}</td>
+    </tr>
+
+</table>
+
+ </div>
+</div>
+</div>
