@@ -1,24 +1,25 @@
 <div class="container space" >
 <div class="row">
  <div class="col-md-2">
-   <ul class="list-group">
-  <li class="list-group-item">index</li>
-  <li class="list-group-item">sharred</li>
-  <li class="list-group-item">send mail</li>
-  <li class="list-group-item">more</li>
-</ul>
+   <ul>
+     <li><a href="#home">Home</a></li>
+     <li><a href="#news">News</a></li>
+     <li><a href="#contact">Contact</a></li>
+     <li><a href="#about">About</a></li>
+   </ul>
  </div>
 
  <div class="col-md-10" >
-<table class="table table-striped" >
+<table class="table colortable" >
 
-  <tbody >
-    <tr *ngFor="let mail of allMails">
 
-      <th scope="row"><input type="checkbox"></th>
-      <td class="location">{{mail.name}}</td>
-      <td class="location">{{mail.sub}}</td>
-      <td>{{mail.time}}</td>
+    <tr  *ngFor="let mail of allMails">
+      <a class="acolor" (click)="maildetails(mail)">
+      <th class="price-label"><input type="checkbox"></th>
+      <td class="price-value">{{mail.name}}</td>
+      <td class="price-value">{{mail.sub}}</td>
+      <td class="price-value">{{mail.time}}</td>
+    </a>
     </tr>
 
 </table>

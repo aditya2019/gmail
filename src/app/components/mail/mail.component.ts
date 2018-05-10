@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 import { JsonApiService } from './../../service/json-api.service';
 
 @Component({
@@ -11,8 +12,8 @@ export class MailComponent implements OnInit {
    public allMails : any =[];
    public errorMsg ='';
 	public showError : boolean = false;
-
-  constructor(private jsonApiService: JsonApiService) { }
+  public selectedmail : any=[];
+  constructor(private jsonApiService: JsonApiService,private router: Router) { }
 
   ngOnInit() {
     this.getMails();
@@ -29,5 +30,10 @@ export class MailComponent implements OnInit {
   })
 }
 
+maildetails(mail)
+{
+  this.selectedmail=mail;
+  this.router.navigate(['/showmail']);
+}
 
 }

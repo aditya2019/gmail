@@ -5,17 +5,21 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MailComponent } from './components/mail/mail.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ShowmailComponent } from './components/showmail/showmail.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MailComponent,
-    HeaderComponent
+    HeaderComponent,
+    ShowmailComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
