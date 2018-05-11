@@ -9,10 +9,13 @@ import { JsonApiService } from './../../service/json-api.service';
   providers: [ JsonApiService ]
 })
 export class MailComponent implements OnInit {
+  // @Output()
+  // selectedmail : EventEmitter<any> = new EventEmitter();
+
    public allMails : any =[];
    public errorMsg ='';
 	public showError : boolean = false;
-  public selectedmail : any=[];
+//  public selectedmail : any=[];
   constructor(private jsonApiService: JsonApiService,private router: Router) { }
 
   ngOnInit() {
@@ -30,10 +33,12 @@ export class MailComponent implements OnInit {
   })
 }
 
-maildetails(mail)
+maildetails()
 {
-  this.selectedmail=mail;
-  this.router.navigate(['/showmail']);
+  //this.selectedmail=mail;
+  // this.selectedmail.emit(mail);
+
+  //this.router.navigate(['/showmail']);
 }
 
 }
