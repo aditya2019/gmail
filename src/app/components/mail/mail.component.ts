@@ -15,6 +15,8 @@ export class MailComponent implements OnInit {
    public allMails : any =[];
    public errorMsg ='';
 	public showError : boolean = false;
+  public value : boolean = false;
+  public deleteidmail : any =[];
 //  public selectedmail : any=[];
   constructor(private jsonApiService: JsonApiService,private router: Router) { }
 
@@ -32,6 +34,59 @@ export class MailComponent implements OnInit {
     this.showError = true;
   })
 }
+
+check()
+{
+  if(this.value==false)
+  {
+  this.value=true;
+  console.log(this.value);
+  console.log("heloo");
+   }
+   else
+   {
+   this.value=false;
+   console.log(this.value);
+   console.log("heloo");
+    }
+}
+
+reload()
+{
+  this.jsonApiService.getMails().subscribe((res) =>{
+    this.allMails = res;
+    console.log(this.allMails);
+    this.showError = false;
+  },(error:any)=>{
+    this.errorMsg = error.statusText;
+    this.showError = true;
+  })
+}
+
+
+deleteitems(mailId)
+{
+  this.deleteidmail=mailId;
+  console.log(this.deleteidmail);
+}
+// delete the mails
+deleteMail()
+{
+  this.jsonApiService.deleteMail(this.deleteidmail).subscribe(data=>{
+    this.getMailafterdelete();
+        },(error:any)=>{
+          console.log(error)
+        })
+}
+getMailafterdelete() {
+    this.jsonApiService.getMails().subscribe((res) =>{
+    this.allMails = res;
+  //  this.showError = false;
+    },(error:any)=>{
+    // this.errorMsg = error._body;
+    // this.showError = true;
+    })
+  }
 
 maildetails()
 {

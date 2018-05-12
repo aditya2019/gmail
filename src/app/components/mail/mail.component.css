@@ -1,6 +1,15 @@
-.td{
-  color: red;
+.headerpad
+{
+  margin-top:10px;
 }
+.buttonpadding
+{
+  margin-left:10px;
+  margin-top: 5px;
+}
+
+
+
 .acolor
 {
   color: white;
@@ -14,47 +23,12 @@
      padding-right: 300px;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    background-color: #f1f1f1;
-}
-
-li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color on hover */
-li a:hover {
-    background-color: #555;
-    color: white;
-}
-.colortable
+.tablemargin
 {
-  color: white;
-  background-color: #555;
-}
-/* mail modify now  */
-
-/* .submodify
-{
-    padding-left: 200px;
-} */
-.timemodify
-{
-  float: right;
+  margin-top: 15px;
 }
 .namemodify
 {
-  width: 30% !important;
+  width: 40% !important;
 
-}
-.submodify
-{
-  padding-left: 100px;
 }
