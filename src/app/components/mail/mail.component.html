@@ -4,10 +4,11 @@
 
   <div class="col-md-12">
     <ol class="breadcrumb headerpad">
-  <button type="button" class="btn btn-dark buttonpadding"><input type="checkbox" (click)="check()">&nbsp; Select all</button>
+  <button type="button" class="btn btn-dark buttonpadding"><input type="checkbox" [checked]="value" (click)="check()">&nbsp; Select all</button>
   <button type="button" class="btn btn-dark buttonpadding" (click)="reload()"><i class="fa fa-rotate-right"></i></button>
   <button type="button" class="btn btn-dark buttonpadding" (click)="deleteMail()"><i class="fa fa-trash" aria-hidden="true"></i></button>
   <button type="button" class="btn btn-dark buttonpadding"><i class="fa fa-check-circle"></i>&nbsp;mark as read</button>
+  <button type="button" class="btn btn-dark buttonpadding" (click)="test()">check</button>
 </ol>
   </div>
 

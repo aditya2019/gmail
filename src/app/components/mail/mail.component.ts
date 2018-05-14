@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,ViewContainerRef , OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { JsonApiService } from './../../service/json-api.service';
+import { ToastsManager} from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-mail',
@@ -18,10 +19,18 @@ export class MailComponent implements OnInit {
   public value : boolean = false;
   public deleteidmail : any =[];
 //  public selectedmail : any=[];
-  constructor(private jsonApiService: JsonApiService,private router: Router) { }
+  constructor(private jsonApiService: JsonApiService,private router: Router,private toastr: ToastsManager, vcr: ViewContainerRef) {
+    this.toastr.setRootViewContainerRef(vcr);
+  }
 
   ngOnInit() {
     this.getMails();
+  }
+
+  test()
+  {
+      this.toastr.success('You are awesome!', 'Success!');
+      console.log("hello toster");
   }
 
   getMails() {
@@ -54,6 +63,7 @@ check()
 reload()
 {
   this.jsonApiService.getMails().subscribe((res) =>{
+    this.value=false;
     this.allMails = res;
     console.log(this.allMails);
     this.showError = false;
@@ -68,7 +78,10 @@ deleteitems(mailId)
 {
   this.deleteidmail=mailId;
   console.log(this.deleteidmail);
+
 }
+// this is test
+
 // delete the mails
 deleteMail()
 {
